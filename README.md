@@ -17,6 +17,7 @@ algorithms-2026
 │   ├── algorithmsdesign
 │   │   └──PerformanceTest
 │   └── *
+├── algorithms-2026.iml
 ├── README.md
 └── .gitignore
 ```
