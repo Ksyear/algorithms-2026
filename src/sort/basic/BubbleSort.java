@@ -1,7 +1,7 @@
 package sort.basic;
 
-import sort.MyList;
-import sort.MySorter;
+import sort.common.MyList;
+import sort.common.MySorter;
 
 public class BubbleSort<E extends Comparable<E>> implements MySorter<E> {
     @Override

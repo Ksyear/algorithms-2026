@@ -1,6 +1,6 @@
 package sort.basic;
 
-import sort.MySorter;
+import sort.common.MySorter;
 
 public class InsertionSort<E extends Comparable<E>> implements MySorter<E> {
     @Override
