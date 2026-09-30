@@ -1,5 +1,7 @@
 package sort;
 
+import sort.advanced.MergeSort;
+import sort.advanced.QuickSort;
 import sort.basic.BubbleSort;
 import sort.basic.InsertionSort;
 import sort.basic.SelectionSort;
@@ -11,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 public class SortPerformanceTest {
-    static final int SIZE = 50_000;
+    static final int SIZE = 10_000;
 
     static void main() {
         Integer[] list = getList();
@@ -19,7 +21,9 @@ public class SortPerformanceTest {
         List<MySorter<Integer>> sorters = Arrays.asList(
                 new SelectionSort<>(),
                 new BubbleSort<>(),
-                new InsertionSort<>()
+                new InsertionSort<>(),
+                new QuickSort<>(),
+                new MergeSort<>()
         );
 
         for (MySorter<Integer> sorter : sorters) {
@@ -27,6 +31,12 @@ public class SortPerformanceTest {
             measureTime(sorter, copyList);
 //            MyList.print(copyList, 10);
         }
+
+        // 스택 오버플로우
+////        MySorter<Integer> sorter = new QuickSort<>();
+//        MySorter<Integer> sorter = new MergeSort<>();
+//        measureTime(sorter, list);
+//        measureTime(sorter, list); // 정렬 상태에서 다시 실행하면 첨부터 끝까지 계속 자리를 변경해줘야됨
 
     }
 
