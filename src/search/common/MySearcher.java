@@ -5,5 +5,5 @@ import java.util.Comparator;
 public interface MySearcher<E> {
     int search(E[] list, E target);
 
-    int search(E[] list, E key, Comparator<E> comparator);
+    int search(E[] list, E target, Comparator<E> comparator);
 }

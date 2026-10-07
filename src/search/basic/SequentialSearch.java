@@ -7,18 +7,13 @@ import java.util.Comparator;
 public class SequentialSearch<E extends Comparable<E>> implements MySearcher<E> {
     @Override
     public int search(E[] list, E target) {
-        for (int i = 0; i < list.length; i++) {
-            if (list[i].equals(target)) {
-                return i;
-            }
-        }
-        return -1;
+        return search(list, target, Comparable::compareTo);
     }
 
     @Override
-    public int search(E[] list, E key, Comparator<E> comparator) {
+    public int search(E[] list, E target, Comparator<E> comparator) {
         for (int i = 0; i < list.length; i++) {
-            if (comparator.compare(key, list[i]) == 0) {
+            if (comparator.compare(list[i], target) == 0) {
                 return i;
             }
         }

@@ -26,20 +26,22 @@ public class StudentMain {
                 new Student("히바치", 21, 6, 2.0)
         };
 
+        Comparator<Student> comparator = Comparator.comparing(Student::age).thenComparing(Student::name).thenComparing(Student::gpa);
+
         MySorter<Student> sorter = new InsertionSort<>();
-        sorter.sort(studentList);
+        sorter.sort(studentList, comparator);
         MyList.println(studentList);
 
 //        MySearcher<Student> searcher = new IterBinarySearch<>();
 //        MySearcher<Student> searcher = new SequentialSearch<>();
         MySearcher<Student> searcher = new RecurBinarySearch<>();
-        Comparator<Student> comparator = (s1, s2) ->s1.name().compareTo(s2.name());
-        Student student = new Student("홍길동", 0, 9, 3.2);
+        Student student = new Student("홍길동", 27, 9, 3.2);
         int index = searcher.search(studentList, student, comparator);
         if (index < 0) {
             System.out.println("검색 결과가 없습니다.");
         } else {
             System.out.println(index + " 위치에 있습니다.");
+            System.out.println(studentList[index]);
         }
     }
 }
