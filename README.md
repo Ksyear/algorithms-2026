@@ -18,11 +18,14 @@ algorithms-2026
 │   │   ├── dynamicprograming
 │   │   │   └── Fivonacci.class
 │   │   └── PerformanceTest.class
-│   ├── app.student 
-│   │   ├── Student.class
-│   │   └── StudentMain.class
+│   ├── app
+│   │   └── student 
+│   │       ├── Student.class
+│   │       └── StudentMain.class
 │   ├── graph
 │   │   ├── Main.class
+│   │   ├── WeightedGraphMain.class
+│   │   ├── WeightedGraph.class
 │   │   └── UnweightedGraph.class
 │   ├── search
 │   │   ├── SearchMain.class
